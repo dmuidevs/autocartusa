@@ -1,0 +1,1583 @@
+@charset "utf-8";
+/* CSS Document */
+/*==================================Index=======================================*/
+/*
+1. Global Settings
+2. Common CSS
+3. Mobile navigation tab
+4. Firstblock 
+5. contentBlock/ThirdBlock
+6. AboutSkenzo
+7. ApplyNow
+8. Footer
+9. 1st slider animation
+10. 2nd slider animation
+11. bxSlider slider css
+
+12. Privacy Policy
+13. Responsive
+    -1st slider animation mobile
+    -2nd slider animation mobile
+14. css3 effects
+15. Null Images
+*/
+
+/*=================================================================================================================================
+                                              1. Global Settings
+=================================================================================================================================*/
+
+*{margin:0; padding:0; -webkit-font-smoothing: subpixel-antialiased}
+a {text-decoration:none; outline:none}
+a img {border:none}
+.clear {clear:both; overflow:hidden; line-height:0; font-size:0; height:0}
+.clearfix:after{visibility:hidden;display:block;font-size:0;content:" ";clear: both;height:0}
+* html .clearfix{zoom:1}
+*:first-child+html /**/ix{zoom:1}
+ul, li {list-style:none}
+.flt {float:left}
+.frt {float:right}
+.centeralign {margin:0 auto}
+header,hgroup,nav,.footer,section,aside,article{display:block}
+:focus{outline:0; border:0}
+input[type=submit]:focus, input[type=submit]:active{outline:0}
+input {border:none; outline:none}
+.block{display:block !important}
+.none {display: none !important}
+.stopScroll{overflow:hidden}
+::-moz-selection{color:#fff;text-shadow:none;background:#915e8a}
+::selection{color:#fff;text-shadow:none;background:#915e8a}
+.posReln {position: relative}
+.brdrNone {border: 0 none !important}
+html, body{-webkit-text-size-adjust:100%}
+input{-webkit-appearance:none;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0}
+input[type="checkbox"]{-webkit-appearance:checkbox}
+/*=================================================================================================================================
+                            2. Common CSS
+=================================================================================================================================*/
+body {font-family:'Open Sans', sans-serif; color:#000; font-size:18px;}
+/**{transition:all 250ms ease,padding 250ms ease, line-height 250ms ease,margin 250ms ease,
+  background-color 500ms ease, border-color 250ms ease,color 250ms ease}*/
+
+// .mainWrap {background:#fff url(images/bgNew.jpg) center 0 no-repeat; background-size: 100% 1510px}
+.firstBlock {background:#fff url(images/bgN1.jpg) center 0 no-repeat; background-size:cover; margin-top: -129px}
+.usedCarBlock {background:#fff url(images/usedCarBg1.jpg) center 0 no-repeat; background-size:cover; margin-top: -129px}
+.newCarBlock {background:#fff url(images/newCarBg1.jpg) center bottom no-repeat; background-size:cover; margin-top: -129px}
+.locateDealerBlock {background:#fff url(images/locateDealerBg.jpg) center bottom no-repeat; background-size:cover; margin-top: -129px}
+header {width:100%}
+.headerIn {padding:32px 0 41px; transition:all 150ms linear; max-width:1280px; margin:0 auto; /*overflow: hidden;*/}
+.headerIn .logo {float:left}
+.headerIn h1 a { position:relative; display:block;  float:left; height: 56px}
+.headerIn h1 img {width:216px; transition:all 150ms linear}
+.headerIn nav {float:right; background: #eff0f0; margin-top: 8px; height: 41px; width: 522px; padding-right:18px; position: relative;}
+.headerIn nav ul {float:left}
+
+.headerIn nav li {position:relative; float:left; font-family:arial; padding:0 0 0 20px}
+.headerIn nav li a {color:#000; font-family: 'Open Sans', sans-serif; font-size: 14px; line-height: 41px; display: block;
+transition:font-size 250ms ease,padding 250ms ease, line-height 250ms ease,margin 250ms ease,
+  background-color 500ms ease, border-color 250ms ease,color 250ms ease; font-weight: 700}
+  .headerIn nav li a:hover {color:#098de8}
+  .headerIn #nav select {background:#f2f2f2 url(images/dropArrow.png) right center no-repeat; width: 90px; color:#000; font-family: 'Open Sans', sans-serif; border:0 none; font-weight: 700; 
+  font-size: 14px; height: 20px; margin-left: 18px; margin-top: 10px;
+  float: left;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;}
+.headerIn nav .searchIco {background: url(images/search.png) 0 0 no-repeat; height: 17px; width: 17px; float: right; margin-top: 12px; cursor: pointer;}
+
+/*.sub-menu {display: none; background: #eff0f0; padding: 0; position: absolute}
+.sub-menu li {padding-left: 10px !important; width: 110px; text-align: center; padding-right: 10px !important}
+.headerIn nav li:hover ul{display: block}*/
+
+.sub-menu{border-bottom: 1px solid #d1d1d1; display: block; left: -999em;margin: 0; position: absolute; z-index: 99999}
+.sub-menu li {background-color: #fff;border: 1px solid #d1d1d1;border-bottom-width: 0}
+.sub-menu a{white-space: normal;width: 12.6875em}
+.sub-menu:before,.sub-menu:after {border-style: solid;content: "";position: absolute}
+.sub-menu:before {border-color: #d1d1d1 transparent;border-width: 0 10px 10px;right: 9px;top: -9px}
+.sub-menu:after {border-color: #fff transparent;border-width: 0 8px 8px;right: 11px;top: -7px}
+.headerIn nav li:hover > ul,.headerIn nav li.focus > ul {left: auto;right: 0}
+
+
+
+/*======================== for Search Hide Show=====================================*/
+.SearchContainer{width:540px;  margin:0 auto;}
+.searchbox{position:relative; min-width:40px; width:0%; height:41px; float:right; overflow:hidden; -webkit-transition: width 0.3s; -moz-transition: width 0.3s;
+ -ms-transition: width 0.3s;
+    -o-transition: width 0.3s; transition: width 0.3s;}
+.searchbox-input{top:0; right:0; border:0; outline:0; background:#fff; width:100%; height:41px; margin:0; padding:0px 55px 0px 20px;
+ font-family: 'Open Sans', sans-serif; font-size: 14px;
+    color:#444343;}
+.searchbox-input::-webkit-input-placeholder {color: #444343;}
+.searchbox-input:-moz-placeholder {color: #444343;}
+.searchbox-input::-moz-placeholder {
+    color: #444343;
+}
+.searchbox-input:-ms-input-placeholder {
+    color: #444343;
+}
+.searchbox-icon, .searchbox-submit{background:#efeff0 url(images/search.png) center center no-repeat; width:40px; height:41px; display:block; position:absolute;
+ top:0; 
+  font-family:verdana; font-size:22px; right:0; padding:0; margin:0; border:0; outline:0; line-height:50px; text-align:center; cursor:pointer;}
+.searchbox-open{width:100%;}
+.byline{position:absolute; top:150px; left:30%; text-align:center; font-size:18px;}
+.byline a{text-decoration:none; color: #444343;}
+
+
+
+
+
+/*--------------Heading & Select boxes--------------*/
+
+#topHeading{font-size: 50px;text-transform: uppercase;color: #ffffff;font-weight: normal; padding: 220px 10px 15px;line-height: 58px; text-align: center;text-shadow: 1px 1px 1px #000;}
+.italic {font-style: italic}
+#topHeading span{font-weight: 700;}
+#subHeading{font-size: 24px;font-weight: 700;color: #ffffff;line-height: 28px; padding-bottom: 50px; text-align: center; padding: 0 10px}
+.brHead {display: none;}
+
+.selectFormWrapper{width:633px}
+.selectFormWrapper3 {width: 633px}
+.selectFormWrapper, .selectFormWrapper3 {margin: 50px auto 0;box-shadow: 0px 2px 20px -5px #000;background-color:#ffffff;height: 48px; position: relative;}
+
+.select-wrapper, .select-wrapper2, .select-wrapper3, .select-wrapper4 {float: left;display: inline-block;border-right: 1px solid #d6d6d6;
+  background: url(images/selectArrow.jpg) no-repeat 90% center; cursor: pointer;position: relative}
+
+.select-wrapper, .select-wrapper select{-webkit-appearance: none;width: 171px; ;font-weight: 700; height: 48px;line-height: 48px; font-size: 14px}
+
+.select-wrapper .holder{display: block; margin: 0 35px 0 20px; white-space: nowrap;
+ overflow: hidden; cursor: pointer; position: relative; /*z-index: 3;text-align: left */}
+.select-wrapper select{margin: 0; position: absolute; z-index: 2; cursor: pointer;
+ outline: none; opacity: 0; left:0; bottom:0;
+ /* CSS hacks for older browsers */
+    _noFocusLine: expression(this.hideFocus=true); 
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    -khtml-opacity: 0;
+    -moz-opacity: 0;
+}
+
+#selectSearch,.selectSearch{background-color: #fa4c1a;color: #ffffff;text-transform: uppercase;font-weight: 700;font-size: 16px;width:117px;border: 0 none;outline: 0 none;
+  font-family: 'Open Sans',sans-serif; height: 48px; line-height: 48px; cursor: pointer;}
+.contentFull {padding-bottom: 200px}
+.disabled {opacity: 0.5 !important;}
+#selectSearch.disabled, .selectSearch.disabled{opacity: 1 !important}
+
+
+
+
+// .header-search-box {display:none; width: 0px;}
+
+// header .sLogo2 {display: none}
+// .headerfixed .sLogo2 {display: block}
+// .headerfixed .sLogo1 {display: none}
+// .headerfixed {position:fixed; top: 0; left:0; width: 100%; z-index: 998; _margin-left:0; animation-duration: 1s; animation-fill-mode: both;
+//     animation-name: growTop; background:rgba(255, 255, 255, 0.8); background:#ffffff\9; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); position: fixed;
+//     z-index: 9999; box-shadow: 0 2px 3px #ccc}
+// #fPages .headerfixed {background:#fff !important} 
+// .headerfixed .headerIn .logo {padding-bottom: 15px}
+// .headerIn nav li a:hover {color: #f0612d }
+// .headerfixed .headerIn {padding: 15px 0 0 !important}
+// .headerfixed .headerIn nav li {padding: 5px 0 0 40px}
+// .headerfixed .headerIn nav li a {color:#000; transition:font-size 250ms ease,padding 250ms ease, line-height 250ms ease,margin 250ms ease,
+//   background-color 500ms ease, border-color 250ms ease,color 250ms ease}
+// .headerfixed .headerIn nav li a:hover {color: #e23f04 }
+// .headerIn nav li .logIco {background-position: 0 -3675px; padding-left:28px }
+// .headerIn nav li .sigIco {background-position: 0 -3792px; padding-left:22px }
+// .headerfixed .headerIn nav li .logIco {background-position: 0 -3909px; padding-left:28px }
+// .headerfixed .headerIn nav li .sigIco {background-position: 0 -4025px; padding-left:22px }
+// .mBtn {display:none}
+// .headerIn {position: relative}
+// .mBtn {position: absolute; right: 0; margin: 0}
+
+#nav-toggle {display: none; height: 30px}
+#nav-toggle.active{position: fixed !important}
+.headerIn #mobNav ul {width: 100%}
+.mobNav{background:#fff; position: fixed; width:230px !important; right: -105%; padding: 85px 0 0 ;  z-index: 999; top:0;
+  height: 100%; box-shadow:-3px 0 4px -4px #000; color: #e23f04; transition: width 1s linear, height 1s linear  }
+  .mobNav li {float: none; width: 100%; padding:0 !important}
+.mobNav a.buy {background: url(images/dropArrow.png) 96% center no-repeat !important}
+.mobNav a {display: block; color: #000; text-align: right; padding: 10px 25px 10px 0; font-weight: bold; 
+  border-top: 1px solid #cdced0; transition-duration: 1s; transition-timing-function: linear; font-family: 'Open Sans', sans-serif; font-size: 14px; 
+  transition:font-size 250ms ease,padding 250ms ease, line-height 250ms ease,margin 250ms ease,
+  background-color 500ms ease, border-color 250ms ease,color 250ms ease}
+.mobNav a:hover {color: #e23f04}
+ #scrollUp { background-image: url(images/scroll.png); bottom: 20px;right: 20px; width: 57px; height: 54px; z-index: 999}
+
+#menu_overlay {background: #000 none repeat scroll 0 0; display: none; height: 100%; left: 0; opacity: 0.5; position: fixed; top: 0; width: 100%; 
+  z-index: 99;}
+  .mobNav {display: none;}
+  .mobNav .searchBoxN {width:185px; margin-right: 25px; float: right; }
+   .mobNav .searchBoxN .searTxt {width: 138px; height: 20px; line-height: 20px; border:1px solid #ccc; padding: 5px; font-size: 14px; float: left;}
+   .mobNav .searchBoxN .searBtn {width: 35px; height: 32px; line-height: 32px; border:0 none; cursor: pointer;
+    background: #f94c1a url(images/searchIco.png) center center no-repeat}
+.headerIn #mobNav select {background:#ffffff url(images/dropArrow.png) 95% center no-repeat; width: 100%; color:#000; font-family: 'Open Sans', sans-serif; border:0 none; font-weight: 700; 
+  font-size: 14px; height: 20px; width: 230px; padding-right: 25px; text-align: right; display: none; margin: 10px 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;}
+    .headerIn #mobNav select option{padding-right:25px}
+
+
+ /*=================================================================================================================================
+                            3.Mobile navigation tab
+=================================================================================================================================*/
+.headerIn #nav-toggle { cursor: pointer; z-index: 9999; position: absolute; right: 12px; top: 58px; height:14px; width: 30px}
+.headerfixed .headerIn #nav-toggle {top: 31px}
+#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {cursor: pointer; border-radius: 1px; height: 5px; 
+  width: 30px;  background: #e23f04 ;  position: absolute;  display: block;  content: ''}
+#nav-toggle span:before {top: -9px}
+#nav-toggle span:after {bottom: -9px}
+#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {transition: all 500ms ease-in-out}
+#nav-toggle.active span {background-color: transparent}
+#nav-toggle.active span:before, #nav-toggle.active span:after {top: 0}
+#nav-toggle.active span:before {transform: rotate(45deg); -moz-transform: rotate(45deg); -webkit-transform: rotate(45deg); 
+-o-transform: rotate(45deg); -ms-transform: rotate(45deg)}
+#nav-toggle.active span:after {transform: rotate(-45deg); -moz-transform: rotate(-45deg); -webkit-transform: rotate(-45deg);
+-o-transform: rotate(-45deg); -ms-transform: rotate(-45deg)}
+
+/*=================================================================================================================================
+                            8. Second Block
+=================================================================================================================================*/
+.entry-title {display: none;}
+.secondBlockWrap {background:#fff url(images/bg2.jpg) center 0 no-repeat; background-size: 100% 515px}
+.secondBlock {width: 1080px; margin: 0 auto; color: #000; text-align: center; position: relative; padding-bottom: 100px}
+.secondBlock .neAdsWrap {position: absolute; top: -100px;left:0px}
+.secondBlock .newAds {border:1px solid #2a439a; width: 466px; min-height: 128px; padding: 35px; text-align: center; color: #000;  display: block;
+  background:#fff url(images/adArrow.png) center 92% no-repeat}
+  .secondBlock .newAds:hover {background:#c4d0fa url(images/adArrow.png) center 92% no-repeat}
+.secondBlock .newAds h2 {font-weight: 700; font-size: 28px}
+.secondBlock .newAds p {padding: 18px 0; font-size: 16px}
+.margL {margin-left: 4px}
+.secondBlock .head {font-size:54px; padding: 175px 0 0}
+.secondBlock .text {font-size:24px; padding:15px 0 35px}
+
+
+.selectFormWrapper2{position: relative;width:412px; margin: 0px auto; background-color:#ffffff; height: 48px;box-shadow: 0px 2px 20px -5px #000}
+.homePageWrapper .selectFormWrapper2{border: 1px solid #e2e2e2;box-shadow: none}
+.zipCode {float: left;width: 90px; padding: 14px 15px; font-size: 14px; font-weight: 700; font-family: 'Open Sans', sans-serif}
+.zipSearchBtn{float: right}
+.locateSearch {padding-top: 50px}
+.LDadPadding {padding-bottom: 100px}
+
+
+
+.nCarHead {color: #2a439a;font-size: 36px;text-align: center;font-weight: 700; padding-top: 75px}
+.nCarSubHead {color: #000000;font-size: 18px;text-align: center;font-weight: normal; padding-bottom: 30px}
+
+/*=================================================================================================================================
+                            8. third Block
+=================================================================================================================================*/
+.thirdBlockWrap {background:#fff url(images/bg31.jpg) center 0 no-repeat; background-size: 100% 286px}
+.thirdBlock {width: 830px; margin: 0 auto; color: #000; text-align: center;}
+.thirdBlock .head {font-size:54px; padding: 40px 0 0; color: #fff}
+.thirdBlock .text {font-size:24px; padding:20px 0 30px; color: #fff}
+.thirdBlock ul {padding-left: 20px; padding-bottom: 50px}
+.thirdBlock li {float: left; width: 250px; margin-right: 20px; box-shadow: 0 0 10px 0 #d9d9d9; background:#fff url(images/adArrow1.png) center 92% no-repeat}
+.thirdBlock li a {display: block; color: #000; padding: 20px 15px 70px; }
+.thirdBlock li a:hover {text-decoration: underline;}
+.thirdBlock li a h3 {font-size: 18px; padding: 20px 0 5px}
+.thirdBlock li a p {font-size: 16px; padding-bottom: 10px}
+.adBannerWrap {width: 970px; height: 66px; margin: 0 auto; display: none;}
+
+
+.fourthBlock {width: 1080px; margin: 0 auto; color: #000; text-align: center;}
+.fourthBlock .head {font-size:54px; padding: 50px 0 ; color: #2a439a}
+.fourthBlock ul {padding-bottom: 50px; text-align: left}
+.fourthBlock li {float: left; width: 305px; margin-right: 82px;text-align: center}
+.fourthBlock li h3 {font-size: 18px; padding: 25px 0 30px; color: #2a439a}
+.fourthBlock li p {font-size: 16px; padding-bottom: 20px;padding: 5px 5px 20px 5px}
+.margRNone {margin-right: 0 !important}
+
+
+.fifthBlock {width: 1200px; margin: 0 auto; color: #000; text-align: center;}
+.fifthBlock .head {font-size:54px; padding: 40px 0 0; color: #f94c1a}
+.fifthBlock .text {font-size:24px; padding:20px 0 30px; color: #000}
+/*====================/* Slider *=====================*/
+
+.sliderContainer{width: 1200px; margin: 0 auto; font-family: 'Open Sans', arial, sans-serif;position: relative;; padding-bottom: 50px}
+.slider li{float: left; /*width: 330px;*/;  margin:0 22px; text-align: left;}
+.sliderWrap .slideInner{width: 1080px; margin: 0 auto}
+.slider .postImg {position: relative;}
+.slider .postImg img {display: block;height: 200px;max-width: 100%;width: 316px;}
+.slider .postDate {background: #f94c1a none repeat scroll 0 0;bottom: 28px;color: #fff;font-family: "Lato",sans-serif;font-size: 20px;font-weight: 700;
+left: 20px;padding: 5px 0 5px 7px;position: absolute;width: 50px;}
+.slider .postDetailWrap {padding: 20px;border-left: 1px solid #f83800;border-bottom: 1px solid #f83800;border-right: 1px solid #f83800;min-height: 255px}
+.slider .postDetailWrap .title a {color: #333333;font-size: 18px;font-weight: 600;
+/*overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width: 100%;width:280px*/}
+.slider .postDetailWrap .desc {font-size: 16px;color: #666666;margin: 12px 0 0;}
+.slider .postDetailWrap .desc .postDesc{min-height: 92px;}
+.slider .postDetailWrap .authorName {float: left;padding: 20px 0;width: 100%;}
+.slider .readMore{color: #f94c1a; font-size: 16px; text-decoration: underline;font-weight: 600}
+
+.sliderContainer .btn{position: absolute;top: 31%;height: 40px;width: 40px;cursor: pointer;}
+.sliderContainer .prev {left: 17px; background: url(images/prev.jpg) no-repeat left center;}
+.sliderContainer .next {right: 17px; background: url(images/next.jpg) no-repeat right center;}
+
+#owl-demo .item{color: #FFF;-webkit-border-radius: 3px;-moz-border-radius: 3px;border-radius: 3px;}
+.customNavigation{text-align: center;}
+.customNavigation a{-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none; -ms-user-select: none;user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);} 
+
+.adBannerWrap2 {width: 1080px; height: 134px; margin: 0 auto 50px; display: none;}
+
+/*=================================================================================================================================
+                            8. Footer
+=================================================================================================================================*/
+.footerWrap{background-color: #262626; padding: 50px 0}
+.footer {width: 1080px; margin: 0 auto; min-height:285px}
+.socialBlock {width: 280px; float: left;}
+.fLogo {background: url(images/fLogo.png) 0 0 no-repeat; width:172px; height: 44px }
+.edmundslogo{background: url(images/Ed.png) 0 0 no-repeat; width:100px; height: 100px;margin-top: 20px;display: block;}
+.social {padding: 25px 0 0}
+.twitt {background: url(images/twitt.png) 0 center no-repeat; width:21px; height: 21px; display: block; float: left; margin-right: 24px}
+.fb {background: url(images/fb.png) 0 center no-repeat; width:11px; height: 21px; display: block; float: left; margin-right: 24px}
+.instagram {background: url(images/Instagram_icon1.png) 0 center no-repeat; width:21px; height: 21px; display: block; float: left; margin-right: 0px}
+.goog {background: url(images/g+.png) 0 center no-repeat; width:21px; height: 21px; display: block; float: left; margin-right: 24px}
+.video {background: url(images/video.png) 0 center no-repeat; width:21px; height: 21px; display: block; float: left; margin-right: 24px}
+.fSearch {margin-top: 32px; width: 136px; height: 24px; background: #eee; border-radius: 30px; padding: 8px 18px}
+.fSearchBox {width: 100px; padding: 2px 5px; height: 24px; line-height: 24px; float: left; display: block; background: #eee; font-size: 16px; color: #000}
+.fsearchBtn {width:23px; height: 24px; background: url(images/fSearch.jpg) 0 0 no-repeat; float: right; cursor: pointer; }
+
+
+.fLinksBlock {width: 250px; float: left; padding-top: 12px}
+.fLinksBlock h2 {font-weight: 700; font-size: 16px; color: #fff}
+.fLinksBlock li {padding-top: 20px}
+.fLinksBlock li a {color: #fff; font-size: 16px}
+.fLinksBlock li a:hover {text-decoration: underline;}
+.fAdWrap {float: left; width:300px; padding-top: 12px }
+
+.subFooter {background: #000; width: 100%}
+.subFooterIn {width: 1080px ; margin: 0 auto; padding: 20px 0}
+.copyright {width: 280px; float: left; font-size: 14px; color: #858383}
+.privacyMenuWrap {float: right}
+.privacyMenuWrap li {float: left; border-left: 1px solid #858383; padding: 0 15px; font-size: 14px}
+.privacyMenuWrap li a {font-size: 14px; color: #858383}
+.privacyMenuWrap li a:hover {text-decoration: underline;}
+
+
+
+
+.container{width: 1080px;margin: 0px auto;}
+
+/*====================/*Car Financing*=====================*/
+
+.FinancingWrap .leftBlock{float: left;width: 50%;padding-top: 10%}
+.FinancingWrap .rightBlock{float: left;width: 50%}
+.FinancingWrap p{font-size: 16px;margin: 15px 0px 15px;text-align: center}
+.FinancingWrap .getQuoteButton{margin:0px auto;float:none}
+.FinancingWrap .innerHeaderBlock{padding: 40px 0px 10px}
+.FinancingWrap h3{color: #2a439a;font-size: 36px;text-align: center;font-weight: 700;line-height: 40px}
+.FinancingWrap h4{color: #000000;font-size: 18px;text-align: center;font-weight: normal;}
+
+.financeForm table {width: 355px}
+.financeForm table div {margin-bottom: 15px; text-align: left}
+.financeForm table div strong { margin-bottom: 5px; display: block; font-size: 14px}
+.financeForm table tr:nth-child(2) td {display: none !important}
+.financeForm #header{display: none !important}
+
+.FinancingWrap .responsive-form{max-width:365px;margin:0 auto;width:100%;float:left}
+
+.FinancingWrap .financeForm2 .responsive-form{max-width:280px;margin:0 auto;width:100%;float:left}
+
+.FinancingWrap .form-row{width:100%;float: left;}
+.FinancingWrap .column-half,.column-full{float:left;position:relative;padding:10px;width:100%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+
+.FinancingWrap .column-twothird, .FinancingWrap .column-twothird{float:left;position:relative;padding:10px;width:100%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+.FinancingWrap .column-onethird, .FinancingWrap .column-onethird{float:left;position:relative;padding:10px;width:100%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+
+.FinancingWrap .column-twothird{width:60%}
+.FinancingWrap .column-onethird{width:40%}
+.FinancingWrap .btnWrap input[type="button"]{float: right;}
+
+.FinancingWrap .formlabel2{padding-top: 8px;float: left;font-size: 14px;font-weight: 600}
+.FinancingWrap .financeForm{border: 2px solid #2a439a; padding: 35px;float: left;}
+.FinancingWrap .financeFormWrap{ padding: 20px 0px 50px 50px;float: left;}
+.FinancingWrap .responsive-form{max-width:365px;margin:0 auto;width:100%;float:left}
+
+.FinancingWrap .financeForm2 {margin-left: 50px;margin-top: 20px}
+.FinancingWrap .financeForm2 .formlabel{display: none;}
+.FinancingWrap .financeForm2 input{border-radius: 0px!important}
+
+.FinancingWrap .financeForm2 .zipFiledsWrap{width: 100%}
+
+/**---------------- Financing Form Inputs ----------------**/
+
+.FinancingWrap .formlabel{display:none}
+.FinancingWrap .wpcf7 input[type="text"],.FinancingWrap .wpcf7 input[type="email"],.FinancingWrap .wpcf7 textarea,.FinancingWrap .wpcf7 select{width:100%;padding:10px;border:1px solid #e2e2e2;border-radius:5px;font-weight:700;font-size:14px;color:#000;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+.FinancingWrap .wpcf7 input[type="button"]{background:#f94c1a;color:#fff;text-transform:uppercase;border:none;padding:14px;cursor:pointer;font-size:16px;display:block;font-weight:700;}
+
+
+.FinancingWrap .financeForm input[type="button"]{width: 100%}
+.FinancingWrap .financeForm2 input[type="button"]{width: auto;padding: 14px 25px;}
+.FinancingWrap .financeForm2 input[type="text"]{width: 110px !important;padding:14px;float: left;/*box-shadow: 0px 0px 7px #cccccc*/}
+
+
+.FinancingWrap select{background:#ffffff url(images/arrow_down.png) no-repeat 96% center;-webkit-appearance:none;-moz-appearance:none;appearance:none;cursor: pointer;}
+.FinancingWrap select option{font-family: 'Open Sans', sans-serif; padding: 0 15px;color: #000000}
+
+.FinancingWrap .wpcf7 input[type="text"]::-webkit-input-placeholder{color:#000000;font-family:'Open Sans',sans-serif;opacity: 1;}
+.FinancingWrap .wpcf7 input[type="text"]::-moz-placeholder{color:#000000;font-family:'Open Sans',sans-serif;opacity: 1;}
+.FinancingWrap .wpcf7 input[type="text"]:-ms-input-placeholder{color:#000000;font-family:'Open Sans',sans-serif;opacity: 1;}
+.FinancingWrap .wpcf7 input[type="text"]:-moz-placeholder{color:#000000;font-family:'Open Sans',sans-serif;opacity: 1;}
+.FinancingWrap .wpcf7 input[type="text"]:focus{background:#fff}
+
+
+.FinancingWrap .wpcf7-submit{float:right;background:#CA0002;color:#fff;text-transform:uppercase;border:none;padding:8px 20px;cursor:pointer}
+.FinancingWrap .wpcf7-submit:hover{background:red}
+.FinancingWrap span.wpcf7-not-valid-tip{text-shadow:none;font-size:12px;color:#fff;background:red;padding:5px}
+.FinancingWrap div.wpcf7-validation-errors{text-shadow:none;border:transparent;background:#f9cd00;padding:5px;color:#9C6533;text-align:center;margin:0;font-size:12px}
+.FinancingWrap div.wpcf7-mail-sent-ok{text-align:center;text-shadow:none;padding:5px;font-size:12px;background:#59a80f;border-color:#59a80f;color:#fff;margin:0}
+
+
+.FinancingWrap .financeForm input[type="button"]{width: 100%}
+.FinancingWrap .financeForm2 input[type="button"]{width: auto}
+.FinancingWrap .financeForm2 input[type="text"]{width: auto;padding:14px;}
+/**---------------- End Financing Form Inputs ----------------**/
+
+
+
+/*====================/*Contact US*=====================*/
+
+
+.ContactWrap{padding: 50px 0px;width: 100%}
+.ContactWrap .fullBlock{float: left;width: 100%}
+.ContactWrap .FormContWrap{padding-bottom: 40px}
+
+.ContactWrap .leftBlock{float: none;width: auto;margin:0px auto}
+.ContactWrap .rightBlock{float: left;width: 50%}
+.ContactWrap .ad300x250{   float: right;width: 300px}
+.ads1054x143{ width: 1054px; height: 143px; margin: 20px auto 20px;}
+.ad970x65{width: 970px; margin: 0px auto}
+.ad970x65 img{width: 100%;}
+
+.ContactWrap .responsive-form{max-width:440px;margin:0 auto;width:100%;/*float:left*/}
+.ContactWrap .form-row{width:100%}
+.ContactWrap .column-half,.ContactWrap .column-full{float:left;position:relative;padding:10px;width:100%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+.ContactWrap .clearfix:after{content:"";display:table;clear:both}
+.ContactWrap .column-half{width:50%}
+
+
+/**---------------- Contact Form Inputs ----------------**/
+
+.ContactWrap .formlabel{display:none}
+.ContactWrap .wpcf7 input[type="text"],.wpcf7 input[type="email"],.wpcf7 textarea,.wpcf7 select{width:100%;padding:15px;border:1px solid #e2e2e2;font-weight:700;font-size:14px;color:#000;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;float: left;}
+.ContactWrap .wpcf7 input[type="button"], .ContactWrap .wpcf7 input[type="submit"]{background:#f94c1a;color:#fff;text-transform:uppercase;border:none;padding:20px 50px;cursor:pointer;font-size:16px;display:block;font-weight:700}
+.ContactWrap .wpcf7 textarea{ resize: none;height: 100px}
+
+.ContactWrap .wpcf7 select{background:#ffffff url(images/arrow_down.png) no-repeat 96% center;-webkit-appearance:none;-moz-appearance:none;appearance:none;cursor: pointer;}
+.ContactWrap select option{font-family: 'Open Sans', sans-serif; padding: 0 15px;color: #000000}
+.ContactWrap .selecthalf select{background-position: 91% center}
+.ContactWrap select::-ms-expand {  display: none;}
+
+
+.ContactWrap .wpcf7 input[type="text"]::-webkit-input-placeholder{color:#000000;font-family:'Open Sans',sans-serif;opacity: 1; }
+.ContactWrap .wpcf7 input[type="text"]::-moz-placeholder{color:#000000;font-family:'Open Sans',sans-serif;opacity: 1; }
+.ContactWrap .wpcf7 input[type="text"]:-ms-input-placeholder{color:#000000;font-family:'Open Sans',sans-serif;opacity: 1; }
+.ContactWrap .wpcf7 input[type="text"]:-moz-placeholder{color:#000000;font-family:'Open Sans',sans-serif;opacity: 1; }
+
+.ContactWrap .wpcf7 input[type="email"]::-webkit-input-placeholder{color:#000000;font-family:'Open Sans',sans-serif;opacity: 1; }
+.ContactWrap .wpcf7 input[type="email"]::-moz-placeholder{color:#000000;font-family:'Open Sans',sans-serif;opacity: 1; }
+.ContactWrap .wpcf7 input[type="email"]:-ms-input-placeholder{color:#000000;font-family:'Open Sans',sans-serif;opacity: 1; }
+.ContactWrap .wpcf7 input[type="email"]:-moz-placeholder{color:#000000;font-family:'Open Sans',sans-serif;opacity: 1; }
+
+
+.ContactWrap .wpcf7 textarea::-webkit-input-placeholder{color:#000000;font-family:'Open Sans',sans-serif;opacity: 1; }
+.ContactWrap .wpcf7 textarea::-moz-placeholder{color:#000000;font-family:'Open Sans',sans-serif;opacity: 1; }
+.ContactWrap .wpcf7 textarea:-ms-input-placeholder{color:#000000;font-family:'Open Sans',sans-serif;opacity: 1; }
+.ContactWrap .wpcf7 textarea:-moz-placeholder{color:#000000;font-family:'Open Sans',sans-serif;opacity: 1; }
+
+.ContactWrap .wpcf7 input[type="text"]:focus{background:#fff}
+
+
+/*.ContactWrap .wpcf7-submit{float:right;background:#CA0002;color:#fff;text-transform:uppercase;border:none;padding:8px 20px;cursor:pointer}*/
+/*.ContactWrap .wpcf7-submit:hover{background:red}*/
+.ContactWrap span.wpcf7-not-valid-tip{text-shadow:none;font-size:12px;color:#fff;background:red;padding:5px}
+.ContactWrap div.wpcf7-validation-errors{text-shadow:none;border:transparent;background:#f9cd00;padding:5px;color:#9C6533;text-align:center;margin:0;font-size:12px}
+.ContactWrap div.wpcf7-mail-sent-ok{text-align:center;text-shadow:none;padding:5px;font-size:12px;background:#59a80f;border-color:#59a80f;color:#fff;margin:0}
+
+/**---------------- End Contact Form Inputs ----------------**/
+
+
+/*====================*Locate A Dealer*=====================*/
+
+/*.dealerDetails {padding: 30px 0}*/
+.dealerWrap {float: left; width: 33.333%; word-wrap: break-word;margin-bottom: 20px}
+.dealerWrap h2 {padding: 0 20px 5px;font-size: 20px}
+.dealerWrap p {padding: 3px 20px;font-size: 15px}
+.dealerWrap a{font-size: 14px}
+.dealerWebsite a{color: #000}
+.dealerContent {position: relative;background: #efefef; padding: 20px 0; margin: 0 10px; height: 300px}
+.dealerheader{color: #000; text-align: center; font-size: 30px; line-height: 33px;text-transform: uppercase; padding: 20px 10px 10px}
+.caBtn{position: absolute;bottom: 20px;left: 50%;width: 170px !important;margin-left: -85px}
+.getQuoteMain h4{text-align: center}
+.featherlight h2{text-align: center}
+
+@media screen and (max-width: 850px) {
+  .dealerWrap{width: 50%}
+  .caBtn{float: left !important;margin: 0 0 0 -85px !important}
+  .contentFullLD{padding-bottom: 30px !important}
+  .contentFullLD .locateSearch{padding-top: 30px !important}
+}
+
+@media screen and (max-width: 680px) {
+  .dealerheader{font-size:22px;line-height: 25px}
+  .dealerWrap{width: auto;float: none}
+  .dealerContent{height: auto}
+  .dealerWrap h2{font-size: 18px}
+  .dealerWrap p{font-size: 14px}
+  .caBtn {float: none !important; margin: 0px auto !important; position: relative; left: auto; bottom: auto}
+}
+
+@media screen and (max-width: 480px) {
+  #mylightbox{width: 100% !important}
+  .dealerheader{padding-top: 30px}
+  .contentFullLD .selectFormWrapper2 #selectSearch,.contentFullLD .selectFormWrapper2 .selectSearch{margin-bottom: 30px}
+}
+
+
+
+/*====================*End Locate A Dealer*=====================*/
+
+/**---------------- fraud pages ----------------**/
+
+.wrapper_f{width: 1080px;margin: 0 auto 60px;color: #000;font-size: 14px;line-height: 20px;text-align: justify;word-wrap:break-word;
+  font-family: 'Open Sans', sans-serif, arial;}
+.wrapper_f .col1{width: 725px;float: left;}
+.wrapper_f .col2{float: right;width: 300px;}
+.wrapper_f .first{margin-top: 60px;}
+.wrapper_f p{margin-top: 0;}
+.wrapper_f h1, .wrapper_f .row_h1{text-transform: uppercase;font-size: 24px;color: #000;font-weight: 700;margin-top: 0;margin-bottom: 40px;}
+.wrapper_f .bold{font-weight: 700;margin-bottom: 35px;color: #000;}
+.wrapper_f .bspace{margin-bottom: 60px;}
+.wrapper_f .rowul{list-style-type: none;padding-left: 0}
+.wrapper_f .btspace{margin-bottom: 35px;}
+.wrapper_f a{color: #003cff;font-weight: 700}
+.wrapper_f .rowul li{background: url('images/bullet.png') left 7px no-repeat;padding-left: 15px;}
+
+/**---------------- fraud pages ----------------**/
+
+/*====================/*Used Car Page*=====================*/
+
+.UsedCarWrap .innerHeaderBlock{padding: 30px 0px 10px}
+.UsedCarWrap .fullBlock{padding-top: 10px}
+.UsedCarWrap h3{color: #2a439a;font-size: 36px;text-align: center;font-weight: 700;line-height: 40px}
+.UsedCarWrap h4{color: #000000;font-size: 18px;text-align: center;font-weight: normal;padding-top: 10px}
+
+.tmvwidgetWrapper { width: 470px; margin: 0px auto;  padding: 30px 0 0}
+
+.UsedCarWrap .responsive-form{max-width:325px;margin:0 auto;width:100%;}
+.UsedCarWrap .form-row{width:100%;float: left;}
+.UsedCarWrap .column-half,.UsedCarWrap .column-full{float:left;position:relative;padding:10px;width:100%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+
+.UsedCarWrap .usedcarForm2 .formlabel{display: none;}
+.UsedCarWrap .usedcarForm2 input{border-radius: 0px!important}
+.UsedCarWrap .usedcarForm2 .zipFiledsWrap{width: 100%}
+
+.tmvwidget{background: #fff !important}
+
+.tmvwidget-body select {font-size: 15px !important; color: #000 !important; background: #ffffff url(images/selectarr.png) no-repeat 96% center;
+    -webkit-appearance: none; -moz-appearance: none; appearance: none; cursor: pointer;
+    width: 100% !important; padding: 15px !important; border: 1px solid #e2e2e2 !important;
+    border-radius: 0px !important; font-weight: 700 !important; -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box; box-sizing: border-box; float: left; margin:0 0 10px !important;height: auto !important}
+
+.tmvwidget-body input[type="text"] {line-height: 17px !important; padding: 10px !important; border: 1px solid #e2e2e2 !important; 
+  border-radius: 0px !important; font-weight: 700 !important; font-size: 14px !important; color: #000 !important; 
+  -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; height: auto !important;width: 68px !important}
+
+.tmvwidget button {background: #f94c1a !important; color: #fff !important; text-transform: uppercase; border: none !important;
+    padding: 8px !important;cursor: pointer; font-size: 14px !important; border-radius: 0 !important; display: block !important; height: auto !important; font-weight: 600 !important}
+
+.tmvwidget-price {background: #fff !important; border: 1px solid #ccc !important}
+
+@media screen and (max-width: 680px) {
+  .UsedCarWrap .innerHeaderBlock{padding-top: 30px}
+  .UsedCarWrap h3{font-size: 22px;line-height: 25px}
+  .UsedCarWrap h4{font-size: 15px;line-height: 18px;padding: 10px 0}
+  .tmvwidgetWrapper{padding-top: 25px}
+  .UsedCarWrap .fullBlock{padding-top: 0}
+  .UsedCarWrap{padding-bottom: 30px}
+  .sliderContainer{padding-bottom: 20px}
+}
+
+/**---------------- Used Car Form Inputs ----------------**/
+
+.UsedCarWrap .wpcf7 input[type="text"],.UsedCarWrap .wpcf7 input[type="email"],.UsedCarWrap .wpcf7 textarea,.UsedCarWrap .wpcf7 select{padding:10px;border:1px solid #e2e2e2;border-radius:5px;font-weight:700;font-size:14px;color:#000;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+.UsedCarWrap .wpcf7 input[type="button"],.UsedCarWrap .wpcf7 input[type="submit"]{background:#f94c1a;color:#fff;text-transform:uppercase;border:none;padding:14px;cursor:pointer;font-size:16px;border-radius:5px;-webkit-border-radius:5px;-moz-border-radius:5px;display:block;font-weight:700;}
+
+
+.UsedCarWrap .wpcf7 input[type="text"]::-webkit-input-placeholder{color:#000000;font-family:'Open Sans',sans-serif;opacity: 1;}
+.UsedCarWrap .wpcf7 input[type="text"]::-moz-placeholder{color:#000000;font-family:'Open Sans',sans-serif;opacity: 1;}
+.UsedCarWrap .wpcf7 input[type="text"]:-ms-input-placeholder{color:#000000;font-family:'Open Sans',sans-serif;opacity: 1;}
+.UsedCarWrap .wpcf7 input[type="text"]:-moz-placeholder{color:#000000;font-family:'Open Sans',sans-serif;opacity: 1;}
+.UsedCarWrap .wpcf7 input[type="text"]:focus{background:#fff}
+
+.UsedCarWrap .usedcarForm2 input[type="button"],.UsedCarWrap .usedcarForm2 input[type="submit"]{padding: 14px 30px;width: 120px}
+.UsedCarWrap .usedcarForm2 input[type="text"]{width: 200px;float: left;/*box-shadow: 0px 0px 7px #cccccc;*/padding:14px}
+
+/**---------------- Used Car Form Inputs ----------------**/
+
+/*=================================================================================================================================
+                            14. new cars
+=================================================================================================================================*/
+
+
+/*====================/* New Car *=====================*/
+
+.newCarContainer{width: 1080px; margin: 20px auto 0;font-family: 'Open Sans', arial, sans-serif;color: #098de8; font-size: 14px}
+.newCarContainer a{color: #098de8; font-weight: 600}
+.newCarContainer img{width: auto;height: auto;max-width: 100%}
+.newCarContainer .marginRightNone{margin-right: 0 !important}
+.newCarContainer .marginLeftNone{margin-left: 0 !important}
+.newCarContainer .carQuotes{margin: 70px 0 30px;}
+.newCarContainer .adblock{margin: 50px auto 40px; width: 970px}
+.newCarContainer .headerBlock{text-align: center;}
+.newCarContainer .headerBlock h2{color: #2a439a; font-size: 36px; font-weight: 700}
+.newCarContainer .headerBlock h3{color: #797979; font-size: 18px; font-weight: 400 }
+.newCarContainer .subHead{color: #000000; font-weight: 700;font-size: 24px;margin: 40px 0 0;text-align: center; }
+.newCarContainer .carTypes{margin: 0px auto; text-align: center;}
+.newCarContainer .leftPanel{width: 740px;float: left}
+.newCarContainer .carTypes li{/*float: left;*/display:inline-block; width: 107px; margin: 30px 5px 0  5px;min-height: 72px;}
+.newCarContainer .carTypes .carImg {text-align: center; min-height: 38px}
+/*.newCarContainer .leftPanel .carTypes img {height: 80px}*/
+.newCarContainer  .carName {display: block;margin: 10px 0 0;text-align: center;color: #343434;font-weight: 600}
+
+
+.newCarContainer .bodyStyle .showAll{/*background: url(images/line.jpg) repeat-x center;*/text-align: center; margin: 16px 0 0;float: left; width: 100%; border-bottom: 1px solid #098de8}
+.newCarContainer .bodyStyle .showTxt{background:#fff url(images/showall.png) no-repeat 100px center;color: #098de8; font-size: 16px; font-weight: 700;padding: 0 40px 0 20px;}
+.newCarContainer .bodyStyle .rightPanel .ad300{margin: 45px 0 0}
+
+.newCarContainer .carModels .subHead{margin-bottom:20px}
+.newCarContainer .carModels .carList {float: left;margin:0 0 0 72px;width: 130px;}
+.newCarContainer .carModels .carList li{padding: 0 0 20px;}
+
+
+.newCarContainer .carPrice .priceList {float: left;margin: 0 0 0 80px;width: 150px;}
+.newCarContainer .carPrice .subHead{margin-bottom:20px}
+.newCarContainer .carPrice .priceList li {padding: 8px 0;}
+
+.newCarContainer .rightPanel{width: 300px;float: right}
+
+
+
+/*====================/*newCarContWrap *=====================*/
+
+
+/*.newCarContWrap {margin: 0 0 100px}*/
+.newCarContWrap .leftBlock{float: left;width: 60%;padding: 15px;border: 1px solid #cccccc;}
+/*.newCarContWrap .responsive-form{max-width:440px;margin:0 auto;width:100%;float:left}*/
+.newCarContWrap .leftBlock h2 {color: #000; padding:0 10px 5px}
+.newCarContWrap .form-row{width:100%}
+.newCarContWrap .column-half,.newCarContWrap .column-full{float:left;position:relative;padding:10px;width:100%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+.newCarContWrap .clearfix:after{content:"";display:table;clear:both}
+.newCarContWrap .column-half{width:50%}
+
+
+/**---------------- newCarContWrap Form Inputs ----------------**/
+
+.newCarContWrap .formlabel{display:none}
+.newCarContWrap .wpcf7 input[type="text"],.wpcf7 input[type="email"],.wpcf7 input[type="tel"],.wpcf7 textarea,.wpcf7 select{width:100%;padding:15px;border:1px solid #e2e2e2;font-weight:700;font-size:14px;color:#333333;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;float: left;}
+.newCarContWrap .wpcf7 input[type="button"],.newCarContWrap .wpcf7 input[type="submit"]{background:#f94c1a;color:#fff;text-transform:uppercase;border:none;cursor:pointer;font-size:16px;display:block;font-weight:700;width: 120px;height: 50px;}
+.newCarContWrap .wpcf7 textarea{ resize: none;height: 100px}
+
+.newCarContWrap .wpcf7 select{background:#ffffff url(images/selectarr.png) no-repeat 96% center;-webkit-appearance:none;-moz-appearance:none;appearance:none;cursor: pointer;}
+.newCarContWrap select option{font-family: 'Open Sans', sans-serif; padding: 0 15px;color: #333333}
+.newCarContWrap .selecthalf select{background-position: 91% center}
+.newCarContWrap select::-ms-expand {  display: none;}
+
+
+.newCarContWrap .wpcf7 input[type="text"]::-webkit-input-placeholder{color:#333333;font-family:'Open Sans',sans-serif;opacity: 1; }
+.newCarContWrap .wpcf7 input[type="text"]::-moz-placeholder{color:#333333;font-family:'Open Sans',sans-serif;opacity: 1; }
+.newCarContWrap .wpcf7 input[type="text"]:-ms-input-placeholder{color:#333333;font-family:'Open Sans',sans-serif;opacity: 1; }
+.newCarContWrap .wpcf7 input[type="text"]:-moz-placeholder{color:#333333;font-family:'Open Sans',sans-serif;opacity: 1; }
+
+
+.newCarContWrap .wpcf7 input[type="tel"]::-webkit-input-placeholder{color:#333333;font-family:'Open Sans',sans-serif;opacity: 1; }
+.newCarContWrap .wpcf7 input[type="tel"]::-moz-placeholder{color:#333333;font-family:'Open Sans',sans-serif;opacity: 1; }
+.newCarContWrap .wpcf7 input[type="tel"]:-ms-input-placeholder{color:#333333;font-family:'Open Sans',sans-serif;opacity: 1; }
+.newCarContWrap .wpcf7 input[type="tel"]:-moz-placeholder{color:#333333;font-family:'Open Sans',sans-serif;opacity: 1; }
+
+
+.newCarContWrap .wpcf7 input[type="email"]::-webkit-input-placeholder{color:#333333;font-family:'Open Sans',sans-serif;opacity: 1; }
+.newCarContWrap .wpcf7 input[type="email"]::-moz-placeholder{color:#333333;font-family:'Open Sans',sans-serif;opacity: 1; }
+.newCarContWrap .wpcf7 input[type="email"]:-ms-input-placeholder{color:#333333;font-family:'Open Sans',sans-serif;opacity: 1; }
+.newCarContWrap .wpcf7 input[type="email"]:-moz-placeholder{color:#333333;font-family:'Open Sans',sans-serif;opacity: 1; }
+
+
+.newCarContWrap .wpcf7 textarea::-webkit-input-placeholder{color:#333333;font-family:'Open Sans',sans-serif;opacity: 1; }
+.newCarContWrap .wpcf7 textarea::-moz-placeholder{color:#333333;font-family:'Open Sans',sans-serif;opacity: 1; }
+.newCarContWrap .wpcf7 textarea:-ms-input-placeholder{color:#333333;font-family:'Open Sans',sans-serif;opacity: 1; }
+.newCarContWrap .wpcf7 textarea:-moz-placeholder{color:#333333;font-family:'Open Sans',sans-serif;opacity: 1; }
+
+.newCarContWrap .wpcf7 input[type="text"]:focus{background:#fff}
+
+
+.newCarContWrap .wpcf7-submit{float:right;background:#CA0002;color:#fff;text-transform:uppercase;border:none;padding:8px 20px;cursor:pointer}
+.newCarContWrap .wpcf7-submit:hover{background:red}
+.newCarContWrap span.wpcf7-not-valid-tip{text-shadow:none;font-size:12px;color:#fff;background:red;padding:5px}
+.newCarContWrap div.wpcf7-validation-errors{text-shadow:none;border:transparent;background:#f9cd00;padding:5px;color:#9C6533;text-align:center;margin:0;font-size:12px}
+.newCarContWrap div.wpcf7-mail-sent-ok{text-align:center;text-shadow:none;padding:5px;font-size:12px;background:#59a80f;border-color:#59a80f;color:#fff;margin:0}
+
+/*=================================================================================================================================
+                            14. innerpages
+=================================================================================================================================*/
+
+
+.innerpageWrap {background-size: 100% 311px}
+.contactUs {background:#fff url(images/contactBg.jpg) center 0 no-repeat; background-size: 100% 311px; margin-top: -129px}
+.financing {background:#fff url(images/financeBg.jpg) center 0 no-repeat; background-size: 100% 311px; margin-top: -129px}
+.fraudPageWrap {background:#fff; width: 100%; padding-top: 50px}
+.innerPage {width: 1080px; margin: 0 auto; text-align: center; padding: 135px 0 34px}
+.innerPage .head {font-size: 54px; font-weight: 700; color: #fff}
+.innerPage .subHead {font-size: 24px; font-weight: 700; color: #fff}
+.innerPage .financeSub {padding-bottom:30px }
+.head#topHeading{padding: 0}
+
+/*=================================================================================================================================
+                            14. blogpage
+=================================================================================================================================*/
+.blogPagePad{width: 100%; padding-top: 120px }
+.blogPageWrap {width: 100%; background: #fff; padding: 20px 0}
+.blogPage {width: 1080px; margin:0 auto; overflow: hidden;}
+.leftBar {width:730px; float: left; }
+.leftBar .blogTitle{padding-bottom: 10px}
+.leftBar .blogTitle a {font-weight: 600; font-size: 40px; line-height: 50px;color: #000}
+/*.leftBar .blogSocial{padding:10px 0}*/
+.leftBar .blogImg {width: 100%}
+.leftBar .blogImg img{width: 100%; height: auto}
+.leftBar .blogDesc {font-size: 17px; padding-top: 20px}
+.leftBar .blogDesc p{margin: 0 0 1.75em}
+.leftBar .blogDesc ol{margin: 0 0 1.75em}
+.blogsWrap {padding-bottom: 50px;position: relative;}
+.rightbar {width: 300px; float: right;}
+.catBox {width: 100%; margin-bottom: 1.75em;}
+.catBox ul, .catBox li{list-style: inherit}
+.catBox ul{padding-left: 20px}
+.catBox li{margin-top: 5px}
+.catBox li a {font-size: 14px; color: #232323;font-weight: 400}
+.catBox li a:hover{text-decoration: underline}
+.catBox h2 {color: #fff; background: #262626; border-radius: 5px; padding:5px 10px; font-size: 14px; display:inline-block;text-transform: uppercase}
+
+.search-form{position: relative;padding-bottom: 0.75em;}
+
+label span.screen-reader-text {display: none}
+input.search-field {height: 26px; padding: 0 5px; border: 1px solid #ccc; outline: 0 none; float:left; width: 75%}
+.screen-reader-text {clip: rect(1px, 1px, 1px, 1px); height: 1px; overflow: hidden; position: absolute !important; width: 1px; word-wrap: normal !important}
+input.search-submit {background: #333333; padding: 5px 10px; color: #fff; float: right;cursor: pointer}
+
+.continueWrap {display: block; text-align: center; padding: 20px 0}
+.continue{background-color: #444;border-radius: 3px; color: #fff; font-size: 12px; font-weight: 600; line-height: 15px; padding: 8px 12px}
+.continue:hover{background-color: #000}
+
+.blogAuth {font-size: 13px; display: inline-block}
+/*.commentCount{margin-top: 5px;text-align: left;background: url(images/comIco.png) no-repeat left center;padding:2px 0 1px 20px;font-size: 10px; line-height: 10px;color: #999999;text-transform: uppercase;}*/
+
+.comments-area{text-align: left}
+.discuss{font-size: 18px;font-weight: 700;color:#000;text-transform: uppercase;padding: 25px 0 5px}
+
+
+.comment-list li{margin-bottom: 25px}
+.commentAuthDetails{float: left;width: 90px}
+.commentAvatar{float: left}
+.commentAuthor{font-size: 14px; line-height: 17px; font-weight: 700; font-style: normal;display: inline}
+.comment-respond{text-align: left;clear: both}
+.commentDate{font-size: 13px;color: #b5b5b5;display: inline;padding-left: 10px}
+.commentTextWrap{float: left;width: 640px}
+.commentText{font-size: 14px;color: #222}
+.reply{display: none}
+
+#reply-title{display: none}
+.logged-in-as{color: #666666;padding-bottom: 5px}
+.logged-in-as a{color: #666666;font-size: 14px}
+/*.replyWrap{border:1px solid #d4d4d4;border-top: 0;padding: 20px}*/
+/*.commentLabel{float: left;font-size: 15px;color: #333333}*/
+.commentTextArea{display: block;border:1px solid #d4d4d4;padding: 10px;}
+.commentReplyHeading{font-size: 15px;color: #333333; font-weight: 400;text-transform: uppercase;background-color:#f4f4f4 ;border:1px solid #dddddd;padding: 10px }
+#comment{width:100%;border:0;display:block;height: 160px;font-family: 'Open Sans',sans-serif;outline: 0;}
+.form-submit{margin-top: 10px}
+.replySubmit{color: #ffffff;text-transform: uppercase;font-size: 15px;font-weight: 700;border:0 none;outline: 0;background-color: #222222;width: 115px;height: 30px;border-radius: 5px}
+
+.nav-links{float: left}
+.noPaged{float: right;font-size: 14px;line-height: 21px;color: #000;padding: 4px 0}
+a.page-numbers, span.page-numbers {font-size: 14px; padding: 3px 5px; border: 1px solid #cac8c8; border-radius: 3px; display: inline-block; margin-right: 0px; min-width: 28px; text-align: center; color: #000;
+    line-height: 21px;  -o-transition: none; -moz-transition: none; -khtml-transition: none; -webkit-transition: none; -ms-transition: none; transition: none}
+span.page-numbers.current {border-color: #000; background-color: #444; color: #fff !important}
+
+.post_tags{padding-bottom: 20px; display: none;}
+.post_tags ul li{display: inline-block}
+.post_tags ul li a {color: #444;font-size: 12px;padding: 1px 7px; background: #444; border-radius: 3px;color: #fff; font-weight: 600; text-transform: uppercase}
+@media screen and (max-width: 1180px) {
+  .blogPage{width: 95%}
+  .leftBar{width: 70%}
+  .rightbar{width: 25%}
+  .ad300x250,.fAd{width: 100% !important}
+  .commentTextWrap{width: 80%}
+}
+@media screen and (max-width: 1100px) {
+  input.search-field{width: 70%}
+}
+@media screen and (max-width: 930px) {
+  input.search-field{width: 65%}
+}
+@media screen and (max-width: 800px) {
+  input.search-field{width: 60%}
+}
+@media screen and (max-width: 767px) {
+  .leftBar .blogDesc{font-size: 15px}
+  .leftBar .blogTitle a{font-size: 30px;line-height: 40px}
+  .leftBar{width: auto;float: none}
+  .rightbar{width: 300px;float: none;margin-top:20px;}
+}
+
+/*=================================================================================================================================
+                            14. 404page/errorPage
+=================================================================================================================================*/
+.errorPage{background: #fff url(images/errorBg.jpg) center bottom no-repeat;background-size: cover;margin-top: -129px;}
+.errorPage #topHeading {text-transform: none;padding: 115px 10px 40px;}
+.errorPage .contentFull{padding-bottom: 45px}
+.errorPageWrap .popularCars {text-align: center;width: 950px; margin:60px auto 90px;}
+.errorPageWrap .popularCars .marginRightZero{margin-right:0 !important;}
+.errorPageWrap .popularCars .headH1{ color: #2c2c2c; font-size: 40px; font-weight: 600; }
+.errorPageWrap .popularCars li{display: inline-block;margin:7% 7% 0 0;}
+.errorPageWrap .popularCars li a{width: 255px; color: #2c2c2c; font-size: 25px; padding: 20px 0; border: 5px solid #2a439a; border-radius: 5px;display: block; }
+
+.mostVistedCars .headH2{color: #2c2c2c; font-size: 40px; text-align: center;font-weight: 600;padding: 50px 10px}
+.mostVistedCars .marginLeftNone{margin-left: 0 !important }
+.mostVistedCars .carModels {width: 1080px;margin: 0 auto 90px;border-top: 2px solid #ebebeb;}
+.mostVistedCars .carModels .carList {float: left;margin:0 0 0 24px;width: 168px;}
+.mostVistedCars .carModels .carList li {padding-bottom: 10px}
+.mostVistedCars .carModels .carList.secondWidth{width: 220px;}
+.mostVistedCars .carModels .carList.lastWidth{width: auto;}
+.mostVistedCars li a{color: #2c2c2c; font-size: 22px}
+
+
+@media screen and (max-width: 1120px) {
+.mostVistedCars .carModels{width: 96% }
+.mostVistedCars .carModels .carList, .mostVistedCars .carModels .carList.secondWidth { width:16%;margin: 0 0 0 2%; }
+.mostVistedCars li a{font-size: 17px;}
+}
+
+@media screen and (max-width: 970px) {
+.errorPageWrap .popularCars{width: 630px}
+.errorPageWrap .popularCars li a {width: 160px;font-size: 18px;}
+}
+
+@media screen and (max-width: 767px) {
+.errorPage #topHeading{font-size: 29px;line-height: 41px;padding: 120px 10px 20px;}
+.errorPage #subHeading{font-size: 20px;}
+.errorPageWrap .popularCars .headH1{font-size: 35px;}
+
+}
+
+@media screen and (max-width: 680px) {
+.errorPage{padding-bottom: 100px}  
+.errorPage #topHeading{font-size: 20px;line-height: 30px;}
+.errorPage #subHeading{font-size: 16px;line-height: 22px;}
+.errorPage .selectFormWrapper{margin: 30px auto 0;background: none}
+.errorPageWrap .popularCars{width: 96%;margin: 30px auto 40px;}  
+.errorPageWrap .popularCars .headH1{font-size: 24px;}  
+.errorPageWrap .popularCars li, .errorPageWrap .popularCars li.marginRightZero{margin: 7% 2% 0 2% !important ;}  
+.errorPageWrap .popularCars li a {width: 125px;font-size: 14px;padding: 14px 0;border: 3px solid #2a439a;}
+
+.mostVistedCars .headH2{font-size: 26px;padding: 30px 0;}
+.mostVistedCars .carModels{margin: 0 auto}
+.mostVistedCars .carModels .carList, .mostVistedCars .carModels .carList.secondWidth{width: 50%;margin: 0 0 30px 0;}
+
+}
+
+/*=================================================================================================================================
+                            16. Auto Insurance
+=================================================================================================================================*/
+.autoinsurance{background: #fff url(images/autoinsbg.jpg) center bottom no-repeat;background-size: cover;margin-top: -129px;}
+.autoinsurance .contentFull {padding-bottom: 50px}
+.autoinsurance #topHeading{padding-top: 150px}
+.autoinsurance .zipCode{width: 260px}
+.autoinsurance .supersubHeading {text-align: center;color: #fff;font-weight: 400;font-size: 24px;padding: 30px 10px 0}
+
+.autoMid p{font-size: 23px;color:#585858;padding: 40px 20px;text-align: center}
+
+.insContent {border: 1px solid #29439a; height: 240px; margin: 0 10px; padding: 20px; text-align: center}
+.insTitle {font-size: 28px; padding-bottom: 20px; font-weight: 700}
+.insText {font-size: 18px; color: #737373; padding-top: 20px}
+
+.insKeyWrap{float: left; word-wrap: break-word; margin:0 133px 55px 0;height: 160px}
+.insKeyWrap a {background: url(images/insar.jpg) center 70% no-repeat;color: #000;font-size: 16px;font-weight: bold;width: 115px; box-shadow: 0px 0px 13px 0px #dedede; 
+  display: block; padding: 45px 22px 93px; text-align: center}
+.keyBig a {padding-bottom: 70px}
+.firstKey{margin-left: 20px !important}
+.lastKey{margin-right: 20px !important}
+
+@media screen and (max-width: 1100px){
+  .insTitle{font-size: 22px}
+  .insText{font-size: 16px}
+  .insKeyWrapper{width: 960px;margin:0px auto}
+  .insKeyWrap{margin-right: 93px}
+}
+
+@media screen and (max-width: 1020px){
+  .insKeyWrapper{width: 700px}
+  .insKeyWrap{margin:0 20px 20px 0}
+  .insKeyWrap a{width: 110px;padding-right: 20px;padding-left: 20px}
+}
+
+@media screen and (max-width: 860px){
+  .insContent{height: 300px;margin:0 10px}
+  .insTitle{font-size: 20px}
+  .autoMid p{font-size: 20px;padding: 30px 20px}
+}
+
+@media screen and (max-width: 766px){
+  .insKeyWrapper{width: 280px}
+  .insKeyWrap{/*float: none;*/margin:0 15px 15px 0;/*height: auto*/}
+  .firstKey{margin-left: 0px !important}
+  .hideRight, .lastKey{margin-right: 0px !important}
+  .insKeyWrap a{padding-left: 10px;padding-right: 10px}
+
+  .insContent{padding: 10px;height: 280px;margin:0 5px}
+  .insTitle{font-size: 18px;padding-bottom: 15px}
+  .insText{font-size: 15px;padding-top: 15px}
+}
+
+@media screen and (max-width: 680px){
+  .autoinsurance .supersubHeading{font-size: 18px;line-height: 21px;padding-top: 0px;padding-bottom: 15px}
+  .autoinsurance .contentFull{padding-bottom: 0px}
+  .newCarContWrap .leftBlock h2{font-size: 20px}
+  .newCarContWrap .wpcf7 input[type="button"], .newCarContWrap .wpcf7 input[type="submit"]{float: none;margin:0px auto;}
+  .insContent{height: auto}
+  .autoMid p{font-size: 16px}
+  .autoinsurance #topHeading{padding-top: 100px;font-size: 25px}
+  .autoinsurance #subHeading{font-size: 16px;line-height: 19px}
+  .comContainer .newCarContWrap .leftBlock{margin:10px auto 0 !important;padding:0 10px;border:0 none}
+  .comContainer .newCarContWrap .leftBlock h2{font-size: 18px;text-align: center}
+  .comContainer .newCarContWrap .column-half,.comContainer .newCarContWrap .column-full{padding: 5px}
+}
+
+@media screen and (max-width: 600px){
+  .insContent{height: 240px}
+  .autoMid p{font-size: 18px}
+}
+
+@media screen and (max-width: 480px){
+ .autoinsurance #subHeading{padding-bottom: 10px}
+ .autoinsurance .zipCode{width: 90%}
+}
+
+@media screen and (max-width: 420px){
+  .insContent{height: auto;padding:20px }
+  /*.insKeyWrapper{width: 90%}*/
+  
+  /*.insKeyWrap a{width: auto !important;padding-left: 0 !important;padding-right: 0 !important}*/
+}
+
+/*=================================================================================================================================
+                            17. Auto Loan
+=================================================================================================================================*/
+.autoloan{background: #fff url(images/autoloanbg.jpg) center top no-repeat;background-size: cover;margin-top: -129px;}
+.ALMidBlock .insContent{height: auto;padding: 30px 10px}
+.ALMidBlock .insTitle{padding-bottom: 0}
+#aldp{background: url(images/dp.jpg) no-repeat center center}
+#alia{background: url(images/ia.jpg) no-repeat center center}
+#allp{background: url(images/lp.jpg) no-repeat center center}
+.alImgWrap{height: 55px;width: 50px;margin:0px auto 30px}
+
+#ecww-widgetwrapper { margin: 30px auto 0; width: 1057px}
+#ecww-more {display: none}
+#ecww-form{background: #fff !important}
+
+.comContainer .newCarContWrap .leftBlock{margin: 30px auto 0;float: none}
+.comContainer .newCarContWrap .wpcf7 input[type="button"], .newCarContWrap .wpcf7 input[type="submit"]{width: 180px;margin:0px auto;float: none}
+.comContainer div.wpcf7 .ajax-loader{display: none}
+
+@media (min-width: 768px){
+  #ecww-summary, #ecww-piechart {border-bottom: 1px solid #EEE !important}
+}
+@media screen and (max-width: 1020px){
+  .autoLoanKeyWrapper .insKeyWrap a{width: 110px;padding-left: 10px;padding-right: 10px}
+}
+
+@media screen and (max-width: 860px){
+  .ALMidBlock .insTitle{font-size: 18px}
+}
+
+@media screen and (max-width: 766px){
+  /*.autoLoanKeyWrapper .insKeyWrap a{padding-left: 20px;padding-right: 20px}*/
+}
+
+@media screen and (max-width: 700px){
+  .alCont{padding: 20px 10px !important}
+  .alImgWrap{margin-bottom: 10px}
+}
+
+@media screen and (max-width: 600px){
+  .ALMidBlock .insContent{padding: 30px 4px}
+  .alCont{padding: 30px 4px !important}
+  .ALMidBlock .insTitle{font-size: 17px}
+}
+
+/*=================================================================================================================================
+                            14. Responsive
+=================================================================================================================================*/
+
+@media screen and (max-width: 1300px) {
+.headerIn,.subFooterIn {width:90%}
+}
+
+@media screen and (max-width: 1220px) {
+.fifthBlock {width: 90%}  
+.sliderContainer{width: 100%}
+.sliderWrap .slideInner{width: 90%} 
+.slider .postDetailWrap{min-height: 285px}
+}
+
+
+
+
+
+@media screen and (max-width: 1140px) {
+.secondBlock, .fourthBlock, .footer, .innerPage {width: 90%}
+.newCarWrap .fourthBlock{width: auto}
+.secondBlock .newAds {width: 39%; padding: 5%}
+.brNone, .brNoneIn {display: none}
+.fourthBlock li {width: 30%; margin-right: 3%}
+.fourthBlock li h3 {padding: 15px 0 10px}
+.adBannerWrap2 {width: 90%}
+.adBannerWrap2 img {width: 100%}
+.socialBlock, .fLinksBlock, .fAdWrap {width: 25%}
+.footerWrap{padding: 50px 0 20px}
+.fAdWrap img {width: 100%}
+/**---------------- Financing ----------------**/
+
+
+.container{width: 95%;}
+.ad970x65{width: 100%;  margin: 0px auto}
+.ads1054x143{ width: 90%; height: auto;}
+}
+
+@media screen and (max-width: 1040px) {
+.fourthBlock li h3 {min-height: 50px}
+.innerPage .subHead {font-size: 22px}
+}
+
+@media screen and (max-width: 1000px) {
+.sliderWrap .slideInner{width: 80%} 
+.slider li{margin: 0 12px;}
+.slider .postImg img{min-height: 130px;width: 100%}
+.slider .postDetailWrap .title a{font-size: 16px;}
+.slider .postDetailWrap .desc, .slider .readMore{font-size: 14px;}
+.slider .postDetailWrap{padding: 14px 20px}
+.slider .postDetailWrap .authorName{padding: 12px 0;}
+.adBannerWrap {width: 90%}
+.adBannerWrap img {width: 100%}
+.brNone3 {display: none;}
+}
+
+@media screen and (max-width: 930px) {
+.secondBlock {padding-bottom:60px }
+}
+
+@media screen and (max-width: 910px) {
+#topHeading {padding-top:120px }
+.brHead {display: block;}
+}
+@media screen and (max-width: 900px) {
+.headerIn #nav select {display: none;}
+.headerIn #mobNav select {display: block;}
+.secondBlock .newAds h2 {font-size: 22px}
+.socialBlock, .fLinksBlock, .fAdWrap {width: 50%}
+.fAdWrap{padding-top: 20px;width: 100%}
+
+
+  
+#nav-toggle {display: block; cursor: pointer}
+.mobNav {display: block;}
+#nav {display: none}
+.SearchContainer {display: none}
+.headerIn nav {background: none; height: 0; padding: 0; margin: 0}
+nav {padding-top: 34px}
+}
+
+@media screen and (max-width: 850px) {
+.thirdBlock {width: 90%}
+.thirdBlock ul {padding-left: 0; width:100%;padding-bottom: 0}
+.thirdBlock li {width: 32%; margin-right: 2%;}
+.thirdBlock li a{padding:20px 2% 70px;min-height:185px}
+.brNone2 {display: none}
+.secondBlock .newAds {min-height: 155px}
+}
+
+@media screen and (max-width: 767px) {
+  .secondBlock .newAds {width:80%; padding:20px 9% 25px; float: none; margin:0 0 10px; min-height: 0 }
+.sliderContainer .btn{height: 30px;width: 30px;background-size: 100% auto !important;}  
+.slider li{margin: 0 10px;}
+.fSearch {margin-top: 20px}
+.thirdBlock li a{min-height:210px }
+.secondBlock .head {padding: 280px 0 0; font-size: 38px; }
+.secondBlock .text, .thirdBlock .text, .fifthBlock .text {font-size: 19px}
+.thirdBlock .head, .fourthBlock .head, .fifthBlock .head {font-size: 38px}
+
+.headerIn{padding-top: 15px}
+.headerIn h1 img{width: 175px}
+.headerIn h1 a{height: 46px}
+.headerIn #nav-toggle{top: 34px}
+.mobNav{padding-top: 65px}
+.headerIn nav li a{line-height: 20px}
+}
+
+@media screen and (max-width: 680px) {
+.locateSearch{padding-top: 10px}
+.selectFormWrapper {width: 90%;margin-top: 30px}
+.selectFormWrapper .select-wrapper2, .selectFormWrapper .select-wrapper3, .selectFormWrapper .select-wrapper {width: 100%; border-bottom: 1px solid #ccc}
+.select-wrapper select, .select-wrapper2 select, .select-wrapper3 select, .select-wrapper4 select {width: 100%}
+.select-wrapper, .select-wrapper2, .select-wrapper3, .select-wrapper4 {background: #fff url(images/selectArrow.jpg) no-repeat 95% center}
+.select-wrapper .holder, .select-wrapper2 .holder2, .select-wrapper3 .holder3, .select-wrapper4 .holder4 {margin: 0 45px 0 20px;text-align: left}
+.selectFormWrapper #selectSearch, .selectFormWrapper .selectSearch {margin-top: 10px; width: 100%}
+.contentFull {padding-bottom: 200px}
+.homePageWrapper .contentFull{padding-bottom: 140px}
+.newCarContWrap .wpcf7 input[type="button"]{margin: 0px auto}
+
+#topHeading {padding-bottom:15px;line-height: 33px; font-size: 30px}
+#subHeading {font-size: 18px; line-height: 21px;padding-bottom: 0px;font-weight: 400}
+
+.fraudPageWrap{padding-top: 10px}
+.wrapper_f{margin-top:10px !important}
+.wrapper_f h1, .wrapper_f .row_h1{font-size: 22px;line-height: 25px;margin-bottom: 20px}
+.wrapper_f .bspace, .wrapper_f .bold{margin-bottom: 20px !important}
+
+.innerPage .financeSub{padding-bottom: 0}
+
+.ContactWrap{padding: 20px 0 0}
+
+
+}
+@media screen and (max-height: 420px) {
+  ul#menu-mob-menu {height: 220px; overflow-y: scroll}
+}
+
+@media screen and (max-width: 650px) {
+.sliderWrap .slideInner{width: 80%} 
+.copyright {width:100%; float: none; text-align: center; padding-bottom: 15px}
+.privacyMenuWrap {width:100%; float: none; text-align: center;}
+.privacyMenuWrap ul {width: 250px; margin:0 auto}
+.fourthBlock li {width: 45%; margin-right: 5%}
+.newCarContainer img{width: 45px}
+.margSecondNone {margin-right: 0 !important}
+.thirdBlk {padding-top: 20px}
+.thirdBlk h3 {min-height: 0 !important}
+.thirdBlock li {width: 48%; margin-right: 4%; margin-bottom: 20px}
+.thirdBlock li a{min-height: 185px}
+.secondBlock .newAds {width: 90%; padding: 15px 5% 50px}
+.secondBlock .newAds p {padding: 15px 0 5px}
+.innerPage .head {font-size: 40px}
+.innerPage .subHead {font-size: 20px}
+.fourthBlock .head{padding: 20px 0 40px}
+.fifthBlock .head{padding-top: 0px}
+.fourthBlock ul{padding-bottom: 20px}
+.slider .postImg img{height: 140px}
+}
+@media screen and (max-width: 560px) {
+.slider .postImg img{height: 100px}
+.slider .postDetailWrap{min-height: 365px}
+}
+
+@media screen and (max-width: 502px) {
+  .slider .postDetailWrap{min-height: auto}
+  .slider .postImg img{min-height: auto;height: auto}
+  .sliderWrap .slideInner{width: 70%}
+}
+@media screen and (max-width: 530px) {
+  .tmvwidgetWrapper{width: 90%}
+  .tmvwidget{width: auto !important}
+}
+
+@media screen and (max-width: 480px) {
+.sliderWrap .slideInner{width: 60%}   
+.slider .postImg img{width: 100%}
+.socialBlock, .fLinksBlock, .fAdWrap {width: 100%; padding-bottom: 30px; text-align: center;}
+.fLogo {margin: 0 auto}
+.edmundslogo{margin: 40px auto 0px}
+.fLinksBlock li {padding-top: 10px}
+.social {padding-top: 20px; margin: 0 auto; width: 102px}
+.fSearch {margin: 20px auto 0}
+.thirdBlock li {width: 100%; min-height: 0}
+.thirdBlock li a{min-height: auto}
+.fourthBlock li {width: 100%; margin-right: 0; text-align: center;padding-top: 0}
+.fourthBlock li h3 {min-height: 0; padding: 10px 0 10px}
+.fourthBlock li p {padding-bottom: 30px}
+.fourthBlock ul {padding-bottom: 0}
+
+.locateSearch{padding-top: 0}
+
+.secondBlock {padding-bottom:130px }
+.secondBlock .head {padding:280px 0 0;line-height: 35px}
+.secondBlock .newAds h2 {font-size: 20px}
+.secondBlock .newAds p {font-size: 14px}
+.secondBlock .head, .fourthBlock .head, .thirdBlock .head, .fifthBlock .head {font-size: 25px;line-height: 28px}
+.fourthBlock .head {padding-bottom: 30px}
+.secondBlock .text {font-size: 16px;padding-bottom: 25px}
+.thirdBlock .text, .fifthBlock .text {font-size: 18px;line-height: 21px}
+.fifthBlock .text{padding-top: 10px}
+.selectFormWrapper2 {width: 90%}
+.selectFormWrapper2 .select-wrapper {width: 100%;border-right: 0 none}
+.zipCode {width: 90%; padding: 9px 5%; height: 28px; line-height: 28px; box-shadow: 0px 2px 20px -5px #000; border-top:1px solid #ccc}
+.homePageWrapper .zipCode{width: 89.9%;box-shadow:none;border:1px solid #e2e2e2}
+.selectFormWrapper2 #selectSearch, .selectFormWrapper2 .selectSearch {margin-top: 10px; width: 100%}
+.thirdBlock .head {padding-top: 45px}
+.innerPage .head {font-size: 30px}
+.innerPage .subHead {font-size: 18px;line-height: 21px; font-weight: 400;padding-top: 15px}
+}
+
+
+
+
+
+
+@media only screen and (max-width: 1100px) {
+   .wrapper_f{width: 90%}
+   .wrapper_f .col1{width: 70%;}
+   .wrapper_f .col2{width: 25%;text-align: center;}
+   .wrapper_f img{width: 100%;}
+   }
+
+   @media only screen and (max-width: 740px) {
+   .wrapper_f .col1{width: 100%;clear: both;}
+   .wrapper_f .col2{width: 100%;clear: both;margin-bottom: 50px;}
+   .wrapper_f .col2 img{width: 250px;text-align: center;}
+   .wrapper_f .bspace{margin-bottom: 30px;}
+   .wrapper_f .btspace{margin-bottom: 20px;}
+   .wrapper_f{margin: 20px auto}
+   }
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 1100px) { 
+.FinancingWrap .ad970x65,.FinancingWrap .ad970x65 img{width: 100%;  margin: 0px auto}
+}
+
+@media only screen and (max-width: 1100px) { 
+.FinancingWrap .column-twothird{width:100%}
+.FinancingWrap .column-onethird{width:100%;}
+.FinancingWrap .formlabel2{padding-top: 0px}
+.FinancingWrap .column-twothird{padding-bottom: 0px}
+.FinancingWrap .column-onethird{padding-top: 2px}
+.FinancingWrap .financeForm{padding: 20px 10px;}
+.FinancingWrap .financeFormWrap{padding-left: 30px;padding-bottom: 50px}
+.FinancingWrap .financeForm2{margin-left: 20px}
+}
+@media only screen and (max-width: 900px) {
+
+.FinancingWrap .leftBlock{float: none;width: auto}
+.FinancingWrap .rightBlock{float: none;width: auto;padding: 0px 10px;clear: both;}
+
+.FinancingWrap .leftBlock{padding: 0px 10px}
+.FinancingWrap .responsive-form{max-width:100%;}
+.FinancingWrap .financeFormWrap{padding-left: 0px;float: none;padding-bottom: 0}
+.FinancingWrap .financeForm{margin-left: 0px;float: none;width: 360px;margin:0px auto}
+.FinancingWrap .financeForm2{margin-left: 0px;margin-bottom: 30px}
+.FinancingWrap .financeForm2 .zipFiledsWrap{float: none;margin: 0px auto;}
+.FinancingWrap .financeForm input[type="button"]{width: auto;padding: 20px 30px}
+.FinancingWrap .financeForm2 .responsive-form{float: none;}
+}
+
+@media only screen and (max-width: 680px) {
+  .FinancingWrap h3{font-size: 22px;line-height: 25px}
+  .FinancingWrap h4 {font-size: 15px; line-height: 18px; padding: 10px 0}
+  .FinancingWrap .innerHeaderBlock{padding: 30px 0 0}
+  .FinancingWrap p{font-size: 14px}
+  .FinancingWrap .financeForm input[type="button"]{margin:0px auto;padding: 10px 20px;font-size: 14px}
+  .FinancingWrap .financeForm2{margin-top:0}
+}
+
+@media only screen and (max-width: 450px) {
+.FinancingWrap p img{width: 100%}
+.FinancingWrap .financeForm2  input[type="button"]{padding: 14px 23px;}
+.FinancingWrap .financeForm2 .zipFiledsWrap{float: none;margin: 0px auto;}
+.FinancingWrap .financeForm{width: auto}
+.financeForm table{width: 100%}
+}
+
+/*====================/*End Car Financing*=====================*/
+
+/*====================/*contact page start*=====================*/
+
+@media only screen and (max-width: 1100px) { 
+.ContactWrap .ad970x65{width: 100%;  margin: 0px auto}
+}
+
+@media only screen and (max-width: 768px) { 
+.ContactWrap .leftBlock{float: none;width: auto}
+.ContactWrap .rightBlock{float: left;width: auto;padding: 0px 10px;clear: both;}
+.ContactWrap .responsive-form{max-width:100%;}
+
+.ContactWrap .ad300x250{float: none;}
+.ContactWrap .rightBlkAdWrap{padding-top: 15px !important}
+.ContactWrap .fullBlkAdWrap{padding: 0px 10px}
+.ContactWrap .selecthalf select{background-position: 96% center}
+}
+
+
+@media only screen and (max-width: 450px) { 
+.ContactWrap .column-half{width: 100%;}
+}
+
+@media only screen and (max-width: 450px) { 
+.ContactWrap .ad300x250 img,.ContactWrap .ad300x250{width: 100%}
+}
+
+/*====================/*contact page End*=====================*/
+
+@media only screen and (max-width: 1100px) { 
+.UsedCarWrap .ad970x65,.FinancingWrap .ad970x65 img{width: 100%;  margin: 0px auto}
+}
+
+
+@media only screen and (max-width: 768px) {
+.UsedCarWrap .responsive-form{max-width:280px;}   
+.UsedCarWrap .usedcarForm2 input[type="text"]{width: 155px}
+}
+
+/*====================/*End Used Car Page*=====================*/
+
+
+@media screen and (max-width: 1150px) {
+.newCarContainer .adblock{width:90% } 
+.newCarContainer{width: 96%}
+.newCarContainer .leftPanel {width: 70%}
+.newCarContainer .rightPanel {width: 25%}
+
+/*.newCarContainer .leftPanel .carTypes li {margin-right: 8%; width: 19%;}*/
+/*.newCarContainer .leftPanel .carTypes li { min-height: 120px;}*/
+/*.newCarContainer .leftPanel .carTypes img{height: 70px;}*/
+.newCarContainer .carModels .carList {margin-left: 6%;width: 20%;}
+
+.newCarContainer .carPrice .priceList {margin-left: 1%;width: 19%;}
+
+}
+
+@media screen and (max-width: 840px) {
+/*.newCarContainer .leftPanel .carTypes .carImg { min-height: 38px;}*/
+/*.newCarContainer .leftPanel .carTypes .carImg img{height: 38px}*/
+}
+
+@media screen and (max-width: 767px) {
+.newCarContainer .leftPanel, .newCarContainer .rightPanel{width: 100%}
+.newCarContainer .rightPanel{text-align: center}
+.newCarContainer .ad300{margin:10px 0 0 }
+.newCarContainer .headerBlock h2 {font-size: 26px;}
+.newCarContainer .headerBlock h3{font-size: 15px;}
+/*.newCarContainer .leftPanel .carTypes li{min-height: 110px;}*/
+.newCarContainer .carPrice .priceList {margin-left: 7%;width: 14%;}
+.newCarContainer .carQuotes{ margin: 28px 0;}
+.newCarContWrap{margin-bottom: 10px}
+}
+
+@media screen and (max-width: 600px) {
+.newCarContainer .leftPanel .carTypes{text-align: center;}  
+.newCarContainer .leftPanel .carTypes li {display: inline-block;float: none;margin: 30px 3% 0;width: 120px;}
+
+.newCarContainer .carModels .carList {margin: 0 2%  !important;width: 46%;text-align: center;}
+
+.newCarContainer .carPrice {text-align: center;}
+.newCarContainer .carPrice .priceList {float: none;margin: 0 !important;width: 100%;}
+} 
+
+@media only screen and (max-width: 1100px) { 
+.newCarContWrap .leftBlock{width: 80%}
+}
+
+@media only screen and (max-width: 768px) { 
+.newCarContWrap .leftBlock{float: none;width: auto}
+
+.newCarContWrap .selecthalf select{background-position: 96% center}
+.newCarContWrap .leftBlock{padding: 15px}
+}
+
+
+@media only screen and (max-width: 450px) { 
+.newCarContWrap .column-half{width: 100%;}
+.newCarContWrap .wpcf7 input[type="button"], .newCarContWrap .wpcf7 input[type="submit"]{float: none;margin:0px auto}
+}
+
+
+
+/*====================/* End Contact US*=====================*/
+
+
+/*====================/* New Car End *=====================*/
+
+
+
+
+/*=================================================================================================================================
+                            15. New Car Search Results
+=================================================================================================================================*/
+
+/*====================/*car search top *=====================*/
+.carResultsContainer{width: 1280px}
+.NCSearchResults{margin-top: -195px;background: #333333 url(images/ncsrbg.jpg) center bottom no-repeat; background-size:cover;margin-bottom: 30px;padding-top: 200px;padding-bottom: 30px}
+.modelName{font-size: 40px; font-weight: 700; text-transform: uppercase; color: #000000; padding: 0px 10px 30px;
+    line-height: 48px; text-align: center}
+
+.leftSide{width: 960px;float: left}
+.modelImage{float: left;width: 50%}
+.modelImage img{width: 100%}
+.noImage{width: 70% !important;height: auto}
+.versions{float: right;width: 50%}
+.versions h4{padding: 0 20px;font-size: 30px}
+.versionList{padding: 0 20px;height: 386px;overflow-y:auto }
+.modelDetailsWrap{padding: 15px 0;border-bottom: 1px solid #dfdfdf}
+.modelDetailsWrap:last-child{border-bottom: 0}
+.modelDetails{width: 70%;float: left}
+.versionName {font-size: 16px; line-height: 20px; font-weight: 700; color: #333;padding-bottom: 10px}
+.versionDisplacement {font-size: 14px; line-height: 18px; color: #555}
+.modelPrice{float: left;width: 30%;text-align: right}
+.modelPrice span{font-size: 18px;font-weight: 700;color: #333333}
+
+.getQuoteWrap{margin-top:15px}
+.getQuoteButton {background: #f94c1a; width: 140px; float: left; text-align: center; padding: 14px 0; 
+  color: #fff; text-transform: uppercase; font-weight: 600; font-size: 16px;display: block}
+
+.allVersionDetails{padding-top: 15px}
+.allVersionDetails h4{padding-bottom: 30px;font-size: 30px}
+.one_fourth_details{float: left;width: 33.3333333%;margin-bottom: 30px;min-height: 325px}
+.detailsIN{padding: 10px 30px;font-size: 14px;border-right: 1px solid #ccc}
+.one_fourth_details:last-child .detailsIN, .one_fourth_details:nth-child(3n+1) .detailsIN{border: none}
+.one_fourth_details:nth-child(3n+2) .detailsIN{padding-left: 0}
+.detailsIN p{padding-bottom: 10px }
+.innerVN{min-height: 50px}
+
+.rightSide{float: right;}
+
+@media screen and (max-width: 680px) {
+  .NCSearchResults{padding-top: 160px;padding-bottom: 180px;margin-bottom: 15px}
+  .thankResults{padding-top:10px}
+}
+
+/*====================/*Get Quote Form *=====================*/
+.getQuoteFormWrap h2 {font-size: 27px; color: #000; padding: 0 0 10px 0;text-align: center}
+.carSelect {background: #f7f7f7; padding: 20px 20px 30px}
+.carSelect h3 {font-weight: 400; font-size: 20px; padding-bottom: 15px}
+span.wpcf7-list-item.first {margin: 0}
+.wpcf7-checkbox label {font-size: 17px}
+.getQuoteMain{padding: 0 20px}
+.getQuoteMain h4 {padding: 10px 0; font-size: 20px; font-weight: 600}
+.getQuoteMain input[type="text"],.getQuoteMain input[type="email"], .getQuoteMain input[type="tel"]{width: 100%;
+  padding: 15px; border: 1px solid #f7f7f7; font-size: 15px; font-weight:400;color: #000; -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box; box-sizing: border-box; float: left; background: #f7f7f7; margin-bottom: 10px}
+.getQuoteMain input[type="submit"]{background:#fa4c1a;color:#ffffff;border:1px solid #f94c1a;padding:10px;cursor:pointer;
+  font-size:14px;width:300px;margin:0px auto;display:block;font-weight:400}
+.getQuoteNote{font-size: 11px;text-align: right;color: #a9a9a5;margin-bottom: 14px}
+.quoteLeft {float: left; width: 48%}
+.zipleft{margin-right: 4%}
+
+@media screen and (max-width: 1365px) {
+  .leftSide,.rightSide{float: none;margin: 0px auto}
+  .rightSide,.carResultsContainer{width: 960px}
+}
+
+@media screen and (max-width: 1100px) {
+  .carResultsContainer{width: 95%}
+  .leftSide,.rightSide{width: 95%}
+}
+@media screen and (max-width: 900px) {
+  .one_fourth_details{width: 50%}
+  .one_fourth_details:last-child .detailsIN, .one_fourth_details:nth-child(3n+1) .detailsIN{border-right: 1px solid #ccc}
+  .one_fourth_details:last-child .detailsIN, .one_fourth_details:nth-child(2n+1) .detailsIN{border:none}
+  .one_fourth_details:nth-child(3n+2) .detailsIN{padding-left: 30px}
+  .one_fourth_details:nth-child(2n+2) .detailsIN{padding-left: 0}
+}
+@media screen and (max-width: 767px) {
+  .modelImage{width: 100%;float: none;margin: 0px auto; text-align: center;}
+  .versions{float: none;width: auto}
+  .versions h4{padding: 10px 0 0 0}
+  .versionList{padding: 0;height: auto}
+  .getQuoteButton{float:none;margin:0px auto;}
+}
+
+@media screen and (max-width: 670px) {
+  .modelName{font-size: 30px;line-height: 35px;padding-bottom: 15px}
+  .allVersionDetails h4{padding-bottom: 15px;padding-top: 10px;font-size: 22px;line-height: 25px}
+
+  .versions h4{font-size: 25px;padding-bottom: 10px}
+  .versionName{font-size: 15px;line-height: 19px}
+  .modelPrice{line-height: 19px}
+  .modelPrice span{font-size: 15px}
+
+  .one_fourth_details {width: auto; float: none;min-height: auto;height: auto;margin-bottom: 10px}
+  .detailsIN{padding: 10px 0;border-bottom: 1px solid #cccccc;border-right: 0}
+  .one_fourth_details:nth-child(3n+2) .detailsIN{padding-left: 0}
+  .one_fourth_details:last-child .detailsIN, .one_fourth_details:nth-child(2n+1) .detailsIN{border-bottom: 1px solid #cccccc}
+  .one_fourth_details:last-child .detailsIN, .one_fourth_details:nth-child(3n+1) .detailsIN{border-right: 0; border-bottom: 1px solid #cccccc}
+
+  .innerVN{min-height: auto;padding-bottom: 20px !important}
+
+  .getQuoteFormWrap h2{font-size: 22px}
+  .getQuoteButton{padding: 10px 0;font-size: 14px}
+}
+
+@media screen and (max-width: 500px) {
+  .getQuoteMain input[type="text"], .getQuoteMain input[type="email"], .getQuoteMain input[type="tel"]{margin: 0px auto 10px;font-size: 14px;float: none}
+  .getQuoteMain input[type="submit"]{width: 90%}
+  .getQuoteMain h4{font-size: 15px}
+  .getQuoteMain{padding: 0 10px}
+  .getQuoteNote{text-align: center}
+  .zipleft,.quoteLeft{float: none;margin-right: 0;width: 100%}
+  .featherlight h2{font-size: 20px}
+
+}
+@media screen and (max-width: 345px) {
+  .ad300x250 img{width: 100%}
+}
+
+/**Hide Ads**/
+.adBannerWrap{position: relative;}
+.adBannerWrap, .adBannerWrap2, .ad300x250, .newCarContainer .adblock, .ad300{background-color: #ccc}
+.adBannerWrap img, .adBannerWrap2 img, .fAd img, .ad300x250 img, .newCarContainer .adblock img, .ad300 img{display: none}
+.fAd, .ad300x250, .ad300{width: 300px;height: 250px}
+.newCarContainer .adblock{width: 970px;height: 99px;max-width: 100%}
+
+.fAd{}
+
+
+
+/*VIN Used Car Page*/
+.vinTable{margin: 0px auto; margin-top: 50px; padding: 0;width: 60%}
+.vinTable td{padding: 5px 10px;border: 1px solid #cccccc;text-transform: uppercase;}
+.vinerror{text-align: center;padding-top: 10px}
+.vinButton {margin: 30px auto 0; display: block; float: none}
+
+
+@media screen and (max-width: 767px) {
+.vinTable{width: 100%}
+}
+
+/*Jquery Lightbox CSS*/
+.lightbox { display: none; }
+
+
+/*contact form 7 generic style*/
+span.wpcf7-not-valid-tip{float: left;font-size: 14px}
+
+
+.desktopads{display:block;padding-bottom: 20px}
+.mobileads{display:none;padding-bottom: 20px}
+.newCarContWrap .desktopads{padding-top: 20px;padding-bottom: 0}
+.rightbar .desktopads{padding-bottom: 0}
+@media screen and (max-width: 767px) {
+.desktopads{display:none;margin-top: 20px}
+.mobileads{display:block;margin-top: 20px}
+.UsedCarWrap .innerHeaderBlock .mobileads{margin-top: 0}
+.newCarContWrap .mobileads{padding-bottom: 10px}
+.rightbar .mobileads{padding-bottom: 0}
+}
+
+/*View Details Page*/
+table.cf7-db-table tbody td > div, table.cf7-db-table th{font-size: 13px}
+.dataDetails h1 { font-size: 25px; margin: 30px 0 0px}
+
+/*Subscribe Widget*/
+.subscribeForm input[type="email"]{border:1px solid #000;color: #000;font-weight: 400;border-radius: 4px}
+.subscribeForm input[type="submit"] {background: #f94c1a; color: #fff; text-transform: uppercase; border: none; padding: 10px 14px;
+    cursor: pointer; font-size: 14px; -moz-border-radius: 5px; font-weight: 700; margin-top: 10px;border-radius: 4px}
